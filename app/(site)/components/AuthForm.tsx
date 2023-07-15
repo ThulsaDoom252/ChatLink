@@ -49,11 +49,11 @@ const AuthForm = () => {
         //NextAuth Social Sign In
     }
     return (
-        <div className={'mt-8  sm:max-auto sm:w-full sm:max-w-md'}>
-            <div className={"bg-white px-4 py-8 shadow sm:rounded-lg sm:px-10"}>
+        <div className={'sm:max-auto sm:w-full sm:max-w-md mt-8'}>
+            <div className={"sm:rounded-lg sm:px-10 bg-white px-4 py-8 shadow"}>
                 <form className={"space-y-6"}
                       onSubmit={handleSubmit(onSubmit)}>
-                    <Input/>
+                    <Input label={"Email"}/>
                 </form>
 
             </div>
