@@ -35,6 +35,15 @@ const Input: React.FC<InputProps> = ({
                 htmlFor={id}>
                 {label}
             </label>
+            <div className={"mt-2"}>
+                <input
+                    id={id}
+                    type={type}
+                    autoComplete={id}
+                    disabled={disabled}
+                       {...register(id, {required})}
+                />
+            </div>
         </div>
     );
 };
