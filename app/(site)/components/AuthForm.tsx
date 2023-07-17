@@ -6,6 +6,9 @@ import Input from "@/app/components/Inputs/Input";
 import Button from "@/app/components/Button";
 import AuthSocialButton from "@/app/(site)/components/AuthSocialButton";
 import {BsGithub, BsGoogle} from "react-icons/bs";
+import {toast} from "react-hot-toast"
+import axios from "axios";
+import {signIn} from "next-auth/react";
 
 type Variant = 'LOGIN' | 'REGISTER'
 
@@ -37,11 +40,26 @@ const AuthForm = () => {
         setIsLoading(true)
 
         if (variant === 'REGISTER') {
-            //Axios Register
+            axios.post('/api/register', data)
+                .catch(() => toast.error('Something went wrong..'))
+                .finally(() => setIsLoading(false))
         }
 
         if (variant === 'LOGIN') {
-            // NextAuth SignIn
+            signIn('credentials', {...data, redirect: false})
+                .then((callback) => {
+                        if (callback?.error) {
+                            toast.error('Invalid user data')
+                            return
+                        }
+                        if (callback?.ok) {
+                            toast.success('Logged in successfully')
+                        }
+                    }
+                )
+                .finally(() => setIsLoading(false))
+
+
         }
     }
 
@@ -72,7 +90,7 @@ const AuthForm = () => {
                     />
                     <Input id="password"
                            label="Password"
-                           type="email"
+                           type="password"
                            register={register}
                            errors={errors}
                            disabled={isLoading}
