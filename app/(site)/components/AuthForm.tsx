@@ -50,22 +50,36 @@ const AuthForm = () => {
                 .then((callback) => {
                         if (callback?.error) {
                             toast.error('Invalid user data')
-                            return
                         }
-                        if (callback?.ok) {
+                        if (callback?.ok && !callback?.error) {
                             toast.success('Logged in successfully')
                         }
                     }
                 )
                 .finally(() => setIsLoading(false))
 
-
         }
     }
 
     const socialAction = (action: string) => {
+        if (action === 'google') {
+            toast.error('Google auth is not available yet')
+            return
+        }
         setIsLoading(true)
+        signIn(action, {redirect: false})
+            .then(callback => {
+                if (callback?.error) {
+                    toast.error('invalid Credentials')
+                    return
+                }
 
+                if (callback?.ok) {
+                    toast.success('Logged in successfully')
+                }
+            })
+
+            .finally(() => setIsLoading(false))
         //NextAuth Social Sign In
     }
 
@@ -130,10 +144,12 @@ const AuthForm = () => {
                         <div className="mt-6 flex gap-2">
                             <AuthSocialButton
                                 icon={BsGithub}
+                                zIndex={50}
                                 onClick={() => socialAction('github')}
                             />
                             <AuthSocialButton
                                 icon={BsGoogle}
+                                zIndex={50}
                                 onClick={() => socialAction('google')}
                             />
                         </div>
