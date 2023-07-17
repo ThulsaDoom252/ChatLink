@@ -63,7 +63,7 @@ const AuthForm = () => {
                             toast.error('Invalid user data')
                         }
                         if (callback?.ok && !callback?.error) {
-                            toast.success('Logged in successfully')
+                            toast.success('Logged in successfully!')
                             router.push('/users')
                         }
                     }

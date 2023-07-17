@@ -1,19 +1,21 @@
 import DesktopSidebar from "@/app/components/sidebar/DesktopSidebar";
+import MobileFooter from "@/app/components/sidebar/MobileFooter";
 
 async function Sidebar({children}: {
     children: React.ReactNode
-}){
+}) {
     return (
-        <div className = "h-full">
-            <DesktopSidebar />
-            <main className = "h-full">
+        <div className="h-full">
+            <DesktopSidebar/>
+            <MobileFooter/>
+            <main className="h-full">
                 {children}
             </main>
             {children}
         </div>
-        )
+    )
 
 }
 
 
-export default  Sidebar
+export default Sidebar
