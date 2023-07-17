@@ -62,26 +62,22 @@ const AuthForm = () => {
     }
 
     const socialAction = (action: string) => {
-        if (action === 'google') {
-            toast.error('Google auth is not available yet')
-            return
-        }
         setIsLoading(true)
         signIn(action, {redirect: false})
             .then(callback => {
                 if (callback?.error) {
                     toast.error('invalid Credentials')
-                    return
                 }
 
-                if (callback?.ok) {
+                if (callback?.ok && !callback?.error) {
                     toast.success('Logged in successfully')
                 }
+
             })
 
             .finally(() => setIsLoading(false))
-        //NextAuth Social Sign In
     }
+
 
     return (
         <div className={'sm:max-auto sm:w-full sm:max-w-md mt-8'}>
@@ -116,64 +112,55 @@ const AuthForm = () => {
                         >{variant === "LOGIN" ? "Sign in" : "Register"}</Button>
                     </div>
                 </form>
-                <div className={"mt-6"}>
-                    <div className={"relative"}>
-                        <div className={"" +
-                            "absolute " +
-                            "inset-0 " +
-                            "flex " +
-                            "items-center"}>
-                            <div className="
-                            w-full
-                            border-t
-                            border-gray-300"/>
+                <div className="mt-6">
+                    <div className="relative">
+                        <div
+                            className="
+                absolute
+                inset-0
+                flex
+                items-center
+              "
+                        >
+                            <div className="w-full border-t border-gray-300" />
                         </div>
-                        <div>
-                            <div className="relative
-                            flex
-                            justify-center
-                            text-sm">
-                                <span className="
-                                bg-white
-                                px-2
-                                text-gray-500">
-                                    Or continue with
-                                </span>
-                            </div>
-                        </div>
-                        <div className="mt-6 flex gap-2">
-                            <AuthSocialButton
-                                icon={BsGithub}
-                                zIndex={50}
-                                onClick={() => socialAction('github')}
-                            />
-                            <AuthSocialButton
-                                icon={BsGoogle}
-                                zIndex={50}
-                                onClick={() => socialAction('google')}
-                            />
+                        <div className="relative flex justify-center text-sm">
+              <span className="bg-white px-2 text-gray-500">
+                Or continue with
+              </span>
                         </div>
                     </div>
-                    <div className="
-                    flex
-                    gap-2
-                    justify-center
-                    text-sm
-                    mt-6
-                    px-2
-                    text-gray-500
-                    ">
-                        <div>
-                            {variant === 'LOGIN' ? 'New to Messenger?' : 'Already have and account?'}
-                        </div>
-                        <div onClick={toggleVariant}
-                             className="
-                        underline
-                        cursor-pointer
-                        ">
-                            {variant === "LOGIN" ? "Create an account" : "Login"}
-                        </div>
 
+                    <div className="mt-6 flex gap-2">
+                        <AuthSocialButton
+                            icon={BsGithub}
+                            onClick={() => socialAction('github')}
+                        />
+                        <AuthSocialButton
+                            icon={BsGoogle}
+                            onClick={() => socialAction('google')}
+                        />
+                    </div>
+                </div>
+                <div
+                    className="
+            flex
+            gap-2
+            justify-center
+            text-sm
+            mt-6
+            px-2
+            text-gray-500
+          "
+                >
+                    <div>
+                        {variant === 'LOGIN' ? 'New to Messenger?' : 'Already have an account?'}
+                    </div>
+                    <div
+                        onClick={toggleVariant}
+                        className="underline cursor-pointer"
+                    >
+                        {variant === 'LOGIN' ? 'Create an account' : 'Login'}
                     </div>
                 </div>
             </div>
