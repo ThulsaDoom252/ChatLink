@@ -6,11 +6,14 @@ export default async function UsersLayout({
     children: React.ReactNode
 }) {
     return (
-        <Sidebar>
-            <div className="h-full">
-                {children}
-            </div>
-        </Sidebar>
+        <>
+            <Sidebar>
+                <div className="h-full">
+                    {children}
+                </div>
+            </Sidebar>
+        </>
+
 
     )
 }

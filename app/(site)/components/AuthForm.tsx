@@ -46,9 +46,9 @@ const AuthForm = () => {
         }
     })
 
+
     const onSubmit: SubmitHandler<FieldValues> = data => {
         setIsLoading(true)
-
         if (variant === 'REGISTER') {
             axios.post('/api/register', data)
                 .then(() => signIn('credentials', data))
