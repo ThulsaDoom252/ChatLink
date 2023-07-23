@@ -11,10 +11,9 @@ async function Sidebar({children}: {
         <div className="h-full">
             <DesktopSidebar currentUser={currentUser!}/>
             <MobileFooter/>
-            <main className="h-full">
+            <main className="h-full lg:pl-20">
                 {children}
             </main>
-            {children}
         </div>
     )
 
