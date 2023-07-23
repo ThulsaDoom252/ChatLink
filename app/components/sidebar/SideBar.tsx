@@ -7,14 +7,9 @@ async function Sidebar({children}: {
 }) {
     const currentUser = await getCurrentUser()
 
-    if (!currentUser) {
-        <div>User is not found</div>
-        return
-    }
-
     return (
         <div className="h-full">
-            <DesktopSidebar currentUser={currentUser}/>
+            <DesktopSidebar currentUser={currentUser!}/>
             <MobileFooter/>
             <main className="h-full">
                 {children}

@@ -5,11 +5,12 @@ import {useForm, FieldValues, SubmitHandler} from "react-hook-form";
 import Input from "@/app/components/Inputs/Input";
 import Button from "@/app/components/Button";
 import AuthSocialButton from "@/app/(site)/components/AuthSocialButton";
-import {BsGithub, BsGoogle} from "react-icons/bs";
+import {BsGithub} from "react-icons/bs";
 import {toast} from "react-hot-toast"
 import axios from "axios";
 import {signIn, useSession} from "next-auth/react";
 import {useRouter} from 'next/navigation'
+import {FcGoogle} from "react-icons/fc";
 
 type Variant = 'LOGIN' | 'REGISTER'
 
@@ -146,10 +147,11 @@ const AuthForm = () => {
                     <div className="mt-6 flex gap-2">
                         <AuthSocialButton
                             icon={BsGithub}
+                            color={"green"}
                             onClick={() => socialAction('github')}
                         />
                         <AuthSocialButton
-                            icon={BsGoogle}
+                            icon={FcGoogle}
                             onClick={() => socialAction('google')}
                         />
                     </div>

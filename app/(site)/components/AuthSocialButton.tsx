@@ -1,16 +1,20 @@
 import {IconType} from "react-icons";
+import clsx from "clsx";
 
 interface AuthButtonProps {
     icon: IconType,
     onClick?: () => void,
+    color?: string,
 }
 
 const AuthSocialButton: React.FC<AuthButtonProps> = ({
                                                          icon: Icon,
                                                          onClick,
+                                                         color,
                                                      }) => {
     return (
-        <button type="button" onClick={onClick} className={` inline-flex
+        <button type="button" onClick={onClick} className="
+        inline-flex
         w-full
         justify-center
         rounded-md
@@ -23,8 +27,8 @@ const AuthSocialButton: React.FC<AuthButtonProps> = ({
         ring-gray-300
         hover:bg-gray-50
         hover:cursor-pointer
-        focus:outline-offset-0`}>
-            <Icon/>
+        focus:outline-offset-0">
+            <Icon color={color}/>
         </button>
     );
 };
