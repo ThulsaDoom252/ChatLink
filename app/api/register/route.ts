@@ -29,7 +29,6 @@ export async function POST(
                 hashedPassword,
             }
         })
-
         return NextResponse.json(user)
     } catch (error: any) {
         console.log(error, 'REGISTRATION_ERROR')

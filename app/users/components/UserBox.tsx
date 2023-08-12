@@ -18,7 +18,7 @@ const UserBox: React.FC<UserBoxProps> = ({data}) => {
         setIsLoading(true)
         axios.post('/api/conversations', {
             userId: data.id
-        }).then(data => router.push(`/coversations/${data.data.id}`))
+        }).then(data => router.push(`/conversations/${data.data.id}`))
             .finally(() => setIsLoading(false))
 
     }, [data, router])
@@ -40,20 +40,20 @@ const UserBox: React.FC<UserBoxProps> = ({data}) => {
             <Avatar user={data}/>
             <div className="min-w-0 flex-1">
                 <div className="focus:outline-none">
-                 <div className="
+                    <div className="
                  flex
                  justify-between
                  items-center
                  mb-1
                  ">
-                  <p className="
+                        <p className="
                   text-sm
                   font-medium
                   text-gray-900
                   ">
-                      {data.name}
-                  </p>
-                 </div>
+                            {data.name}
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

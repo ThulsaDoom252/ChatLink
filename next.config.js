@@ -7,6 +7,11 @@ const nextConfig = {
                 'lh3.googleusercontent.com',
             ],
         },
+    serverRuntimeConfig: {
+        // Указать внешний IP-адрес вашего компьютера
+        HOST: '192.168.1.3',
+        PORT: process.env.PORT,
+    },
 
 }
 
