@@ -24,7 +24,6 @@ const AuthForm = () => {
         }
     }, [session?.status, router])
 
-    window.session = session
 
     const [variant, setVariant] = useState<Variant>('LOGIN')
     const [isLoading, setIsLoading] = useState(false)
@@ -48,7 +47,6 @@ const AuthForm = () => {
             password: '',
         }
     })
-
 
     const onSubmit: SubmitHandler<FieldValues> = data => {
         setIsLoading(true)
