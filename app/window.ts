@@ -1,8 +1,9 @@
-declare global {
-    interface Window {
-        [key: string]: any;
-    }
+interface CustomWindow extends Window {
+    s1: any;
 }
 
+declare global {
+    const window: CustomWindow;
+}
 
-export {}
+export {}; 

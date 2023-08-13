@@ -19,10 +19,12 @@ const GetConversationById = async (conversationId: string) => {
         })
 
         return conversation
-    } catch (error: any) {
 
+
+    } catch (error: any) {
+            return void 0
     }
-    return void 0
+
 };
 
 export default GetConversationById;
