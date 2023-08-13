@@ -3,6 +3,10 @@
 import {Conversation, User} from "@prisma/client";
 import React, {useMemo} from "react";
 import useOtherUser from "@/app/hooks/useOtherUser";
+import Link from "next/link"
+import {HiChevronLeft} from "react-icons/hi";
+import Avatar from "@/app/components/Avatar";
+import {HiEllipsisHorizontal} from "react-icons/hi2";
 
 interface HeaderProps {
     conversation: Conversation & {
@@ -12,14 +16,14 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({conversation}) => {
-    // const otherUser = useOtherUser(conversation)
+    const otherUser = useOtherUser(conversation)
 
     const statusText = useMemo(() => {
         if (conversation.isGroup) {
             return `${conversation.users.length} members`
         }
 
-        return 'Active'
+        return 'Online'
     }, [conversation])
     return (
         <div className="
@@ -36,8 +40,38 @@ const Header: React.FC<HeaderProps> = ({conversation}) => {
         shadow-sm
         ">
             <div className="flex gap-3 items-center">
-
+                <Link
+                    className="lg:hidden
+                    block
+                    text-sky-500
+                    hover:text-sky-600
+                    transition
+                    cursor-pointer
+                    "
+                    href="/conversations">
+                    <HiChevronLeft size={32}/>
+                </Link>
+                <Avatar user={otherUser}/>
+                <div className="flex flex-col">
+                    <div>
+                        {conversation.name || otherUser.name}
+                    </div>
+                    <div className="
+                     text-sm
+                     font-light
+                     text-neutral-500">
+                        {statusText}
+                    </div>
+                </div>
             </div>
+            <HiEllipsisHorizontal size={32} className="
+            text-gray-500
+            cursor-pointer
+            hover:text-sky-600
+            transition
+            " onClick={() => {
+
+            }}/>
         </div>
     );
 };
