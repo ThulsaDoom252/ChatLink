@@ -1,12 +1,13 @@
 "use client"
 
 import {FullMessageType} from "@/app/types";
-import React from "react";
+import React, {useEffect} from "react";
 import {useSession} from "next-auth/react";
 import clsx from "clsx";
 import Avatar from "@/app/components/Avatar";
 import {format} from "date-fns";
 import Image from "next/image"
+import axios from "axios";
 
 
 interface MessageBoxProps {
@@ -37,6 +38,7 @@ const MessageBox: React.FC<MessageBoxProps> = ({data, isLast}) => {
         data.image ? 'rounded-md p-0' : 'rounded-full py-2 px-3'
     )
 
+
     return (
         <div className={container}>
             <div className={avatar}>
@@ -60,6 +62,15 @@ const MessageBox: React.FC<MessageBoxProps> = ({data, isLast}) => {
                                           height="288" width="288" src={data.image} alt="image"/>
                     ) : (<div>{data.body}</div>)}
                 </div>
+                {isLast && isOwn && seenList.length > 0 && (
+                    <div className="
+                    text-xs
+                    font-light
+                    text-gray-500
+                    ">
+                        {`Seen by ${seenList}`}
+                    </div>
+                )}
             </div>
         </div>
     );
