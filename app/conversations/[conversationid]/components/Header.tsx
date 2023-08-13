@@ -1,12 +1,13 @@
 "use client"
 
 import {Conversation, User} from "@prisma/client";
-import React, {useMemo} from "react";
+import React, {useMemo, useState} from "react";
 import useOtherUser from "@/app/hooks/useOtherUser";
 import Link from "next/link"
 import {HiChevronLeft} from "react-icons/hi";
 import Avatar from "@/app/components/Avatar";
 import {HiEllipsisHorizontal} from "react-icons/hi2";
+import ProfileDrawer from "@/app/conversations/[conversationId]/components/ProfileDrawer";
 
 interface HeaderProps {
     conversation: Conversation & {
@@ -17,6 +18,8 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({conversation}) => {
     const otherUser = useOtherUser(conversation)
+    const [drawerOpen, setDrawerOpen] = useState(false)
+
 
     const statusText = useMemo(() => {
         if (conversation.isGroup) {
@@ -26,7 +29,11 @@ const Header: React.FC<HeaderProps> = ({conversation}) => {
         return 'Online'
     }, [conversation])
     return (
-        <div className="
+        <>
+            <ProfileDrawer data={conversation}
+                           isOpen={drawerOpen}
+                           onClose={() => setDrawerOpen(false)}/>
+            <div className="
         bg-white
         w-full
         flex
@@ -39,40 +46,41 @@ const Header: React.FC<HeaderProps> = ({conversation}) => {
         items-center
         shadow-sm
         ">
-            <div className="flex gap-3 items-center">
-                <Link
-                    className="lg:hidden
+                <div className="flex gap-3 items-center">
+                    <Link
+                        className="lg:hidden
                     block
                     text-sky-500
                     hover:text-sky-600
                     transition
                     cursor-pointer
                     "
-                    href="/conversations">
-                    <HiChevronLeft size={32}/>
-                </Link>
-                <Avatar user={otherUser}/>
-                <div className="flex flex-col">
-                    <div>
-                        {conversation.name || otherUser.name}
-                    </div>
-                    <div className="
+                        href="/conversations">
+                        <HiChevronLeft size={32}/>
+                    </Link>
+                    <Avatar user={otherUser}/>
+                    <div className="flex flex-col">
+                        <div>
+                            {conversation.name || otherUser.name}
+                        </div>
+                        <div className="
                      text-sm
                      font-light
                      text-neutral-500">
-                        {statusText}
+                            {statusText}
+                        </div>
                     </div>
                 </div>
-            </div>
-            <HiEllipsisHorizontal size={32} className="
+                <HiEllipsisHorizontal size={32} className="
             text-gray-500
             cursor-pointer
             hover:text-sky-600
             transition
-            " onClick={() => {
+            " onClick={() =>
 
-            }}/>
-        </div>
+                    setDrawerOpen(true)}/>
+            </div>
+        </>
     );
 };
 
