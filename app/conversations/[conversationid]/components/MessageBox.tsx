@@ -1,13 +1,14 @@
 "use client"
 
 import {FullMessageType} from "@/app/types";
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import {useSession} from "next-auth/react";
 import clsx from "clsx";
 import Avatar from "@/app/components/Avatar";
 import {format} from "date-fns";
 import Image from "next/image"
 import axios from "axios";
+import ImageModal from "@/app/conversations/[conversationId]/components/ImageModal";
 
 
 interface MessageBoxProps {
@@ -17,6 +18,7 @@ interface MessageBoxProps {
 
 const MessageBox: React.FC<MessageBoxProps> = ({data, isLast}) => {
     const session = useSession()
+    const [imageModalOpen, setImageModalOpen] = useState(false)
     const isOwn = session?.data?.user?.email === data?.sender?.email
     const seenList = (data.seen || [])
         .filter((user) => user.email !== data?.sender?.email)
@@ -54,12 +56,19 @@ const MessageBox: React.FC<MessageBoxProps> = ({data, isLast}) => {
                     </div>
                 </div>
                 <div className={message}>
-                    {data.image ? (<Image className="
+                    <ImageModal
+                        src={data.image}
+                        isOpen={imageModalOpen}
+                        onClose={() => setImageModalOpen(false)}
+                    />
+                    {data.image ? (<Image
+                            onClick={() => setImageModalOpen(true)}
+                            className="
                     object-cover
                     cursor-pointer
                     hover:scale-110
                     transition"
-                                          height="288" width="288" src={data.image} alt="image"/>
+                            height="288" width="288" src={data.image} alt="image"/>
                     ) : (<div>{data.body}</div>)}
                 </div>
                 {isLast && isOwn && seenList.length > 0 && (
