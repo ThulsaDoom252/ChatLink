@@ -26,7 +26,7 @@ const UserBox: React.FC<UserBoxProps> = ({data}) => {
 
     return (
         <>
-            <LoadingModal/>
+            {isLoading && <LoadingModal/>}
             <div onClick={handleClick} className="
         w-full
         relative
