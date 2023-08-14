@@ -1,18 +1,18 @@
 'use client';
 
-import {User} from "@prisma/client";
-import {useRouter} from "next/navigation";
-import {useSession} from "next-auth/react";
-import {useEffect, useMemo, useState} from "react";
-import {MdOutlineGroupAdd} from 'react-icons/md';
+import { User } from "@prisma/client";
+import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
+import { useEffect, useMemo, useState } from "react";
+import { MdOutlineGroupAdd } from 'react-icons/md';
 import clsx from "clsx";
-import {find} from 'lodash';
+import { find, uniq } from 'lodash';
 
 import useConversation from "@/app/hooks/useConversation";
-import {pusherClient} from "@/app/libs/pusher";
+import { pusherClient } from "@/app/libs/pusher";
+import GroupChatModal from "./GroupChatModal";
 import ConversationBox from "./ConversationBox";
-import {FullConversationType} from "@/app/types";
-import GroupChatModal from "@/app/conversations/components/GroupChatModal";
+import { FullConversationType } from "@/app/types";
 
 interface ConversationListProps {
     initialItems: FullConversationType[];
@@ -30,7 +30,7 @@ const ConversationList: React.FC<ConversationListProps> = ({
     const router = useRouter();
     const session = useSession();
 
-    const {conversationId, isOpen} = useConversation();
+    const { conversationId, isOpen } = useConversation();
 
     const pusherKey = useMemo(() => {
         return session.data?.user?.email
@@ -58,7 +58,7 @@ const ConversationList: React.FC<ConversationListProps> = ({
 
         const newHandler = (conversation: FullConversationType) => {
             setItems((current) => {
-                if (find(current, {id: conversation.id})) {
+                if (find(current, { id: conversation.id })) {
                     return current;
                 }
 
@@ -104,16 +104,16 @@ const ConversationList: React.FC<ConversationListProps> = ({
                         <div
                             onClick={() => setIsModalOpen(true)}
                             className="
-                rounded-full 
-                p-2 
-                bg-gray-100 
-                text-gray-600 
-                cursor-pointer 
-                hover:opacity-75 
+                rounded-full
+                p-2
+                bg-gray-100
+                text-gray-600
+                cursor-pointer
+                hover:opacity-75
                 transition
               "
                         >
-                            <MdOutlineGroupAdd size={20}/>
+                            <MdOutlineGroupAdd size={20} />
                         </div>
                     </div>
                     {items.map((item) => (

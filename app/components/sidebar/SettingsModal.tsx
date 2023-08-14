@@ -6,7 +6,7 @@ import {useRouter} from "next/navigation";
 import {FieldValues, SubmitHandler, useForm} from "react-hook-form";
 import axios from "axios";
 import {toast} from "react-hot-toast";
-import Modal from "@/app/components/Modal";
+import Modal from "@/app/components/modals/Modal";
 import Input from "@/app/components/Inputs/Input";
 import Image from "next/image";
 import {CldUploadButton} from "next-cloudinary";

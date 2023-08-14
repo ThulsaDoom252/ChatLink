@@ -1,25 +1,25 @@
 'use client';
 
 import axios from 'axios';
-import React, { useState } from 'react'
-import { useRouter } from 'next/navigation';
+import React, {useState} from 'react'
+import {useRouter} from 'next/navigation';
 import {
     FieldValues,
     SubmitHandler,
     useForm
 } from 'react-hook-form';
-import { User } from '@prisma/client';
-import { toast } from 'react-hot-toast';
-import Modal from "@/app/components/Modal";
-import Input from "@/app/components/Inputs/Input";
-import Select from "react-select";
-import Button from "@/app/components/Button";
-import SelectCustom from "@/app/components/Inputs/SelectCustom";
+import {User} from '@prisma/client';
+
+import Input from "../../components/Inputs/Input";
+import Select from '../../components/Inputs/SelectCustom';
+import Modal from '../../components/modals//Modal';
+import Button from '../../components/Button';
+import {toast} from 'react-hot-toast';
 
 interface GroupChatModalProps {
     isOpen?: boolean;
     onClose: () => void;
-    users?: User[];
+    users: User[];
 }
 
 const GroupChatModal: React.FC<GroupChatModalProps> = ({
@@ -89,7 +89,7 @@ const GroupChatModal: React.FC<GroupChatModalProps> = ({
                                 required
                                 register={register}
                             />
-                            <SelectCustom
+                            <Select
                                 disabled={isLoading}
                                 label="Members"
                                 options={users.map((user) => ({

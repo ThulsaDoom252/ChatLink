@@ -1,15 +1,12 @@
 import './globals.css'
-import type {Metadata} from 'next'
-import {Inter} from 'next/font/google'
-import ToasterContext from "./context/ToasterContext"
-import AuthContext from "@/app/context/AuthContext";
-import ActiveStatus from "@/app/components/ActiveStatus";
+import AuthContext from './context/AuthContext'
+import ActiveStatus from './components/ActiveStatus'
+import ToasterContext from './context/ToasterContext'
+import React from "react";
 
-const inter = Inter({subsets: ['latin']})
-
-export const metadata: Metadata = {
-    title: 'ChatLink app',
-    description: 'Amazing chat app',
+export const metadata = {
+    title: 'Messenger',
+    description: 'Messenger Clone',
 }
 
 export default function RootLayout({
@@ -19,10 +16,10 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-        <body className={inter.className}>
+        <body>
         <AuthContext>
-            <ToasterContext/>
-            <ActiveStatus/>
+            <ToasterContext />
+            <ActiveStatus />
             {children}
         </AuthContext>
         </body>

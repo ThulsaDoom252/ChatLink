@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1860038f-0b15-431f-a174-5701802039db" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/hooks/useSidebar.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/ChatLink.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/ChatLink.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ActiveStatus.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ActiveStatus.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/EmptyState.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/EmptyState.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/LoadingModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/modals/LoadingModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/modals/Modal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/sidebar/DesktopItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/sidebar/DesktopItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/sidebar/DesktopSidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/sidebar/DesktopSidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/sidebar/MobileFooter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/sidebar/MobileFooter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/sidebar/MobileItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/sidebar/MobileItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/sidebar/SettingsModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/sidebar/SettingsModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/sidebar/SideBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/sidebar/SideBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/context/AuthContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/context/AuthContext.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/context/ToasterContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/context/ToasterContext.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversations/[conversationid]/components/Body.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/conversations/[conversationid]/components/Body.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversations/[conversationid]/components/ConfirmModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/conversations/[conversationid]/components/ConfirmModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversations/[conversationid]/components/Form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/conversations/[conversationid]/components/Form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversations/[conversationid]/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/conversations/[conversationid]/components/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversations/[conversationid]/components/ImageModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/conversations/[conversationid]/components/ImageModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversations/[conversationid]/components/MessageBox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/conversations/[conversationid]/components/MessageBox.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversations/[conversationid]/components/MessageInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/conversations/[conversationid]/components/MessageInput.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversations/[conversationid]/components/ProfileDrawer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/conversations/[conversationid]/components/ProfileDrawer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversations/[conversationid]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/conversations/[conversationid]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversations/components/ConversationBox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/conversations/components/ConversationBox.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversations/components/ConversationList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/conversations/components/ConversationList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversations/components/GroupChatModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/conversations/components/GroupChatModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversations/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/conversations/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversations/loading.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/conversations/loading.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversations/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/conversations/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/useActiveChannel.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/useActiveChannel.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/useActiveList.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/useActiveList.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/useConversation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/useConversation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/useOtherUser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/useOtherUser.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/useRoutes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/useRoutes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/prismadb.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/prismadb.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/pusher.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/pusher.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/types/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/components/UserBox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/users/components/UserBox.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/components/UserList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/users/components/UserList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/users/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/loading.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/users/loading.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/users/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/window.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../middleware.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../next.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pages/api/pusher/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../pages/api/pusher/auth.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/../prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tailwind.config.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2TzQ1TWzkJTnPP7Awlp9VJD9EeH" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "fix",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2023.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1860038f-0b15-431f-a174-5701802039db" name="Changes" comment="" />
+      <created>1692043213517</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1692043213517</updated>
+      <workItem from="1692043214563" duration="203000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
