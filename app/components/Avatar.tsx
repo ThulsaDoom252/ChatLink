@@ -3,12 +3,18 @@
 import {User} from "@prisma/client";
 import Image from "next/image";
 import currentUser from "../../public/images/currentUser.png"
+import useActiveList from "@/app/hooks/useActiveList";
+import React from "react";
 
 interface AvatarProps {
     user?: User
 }
 
 const Avatar: React.FC<AvatarProps> = ({user}) => {
+    const {members} = useActiveList()
+
+    const isActive = members.indexOf(user?.email!) !== -1
+
     return (
         <div className="relative w-fit">
             <div className="
@@ -24,7 +30,7 @@ const Avatar: React.FC<AvatarProps> = ({user}) => {
             ">
                 <Image src={user?.image || currentUser} alt="your-avatar" fill/>
             </div>
-            <span className="
+            {isActive && <span className="
             absolute
             block
             rounded-full
@@ -37,7 +43,8 @@ const Avatar: React.FC<AvatarProps> = ({user}) => {
             w-2
             md:h-3
             md:w-3
-            "/>
+            "/>}
+
         </div>
     );
 };
