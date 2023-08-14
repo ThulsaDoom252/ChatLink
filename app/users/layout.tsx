@@ -1,6 +1,7 @@
 import getUsers from "../actions/getUsers";
-import Sidebar from "../components/sidebar/Sidebar";
+
 import UserList from "./components/UserList";
+import SideBar from "@/app/components/sidebar/SideBar";
 
 export default async function UsersLayout({
   children
@@ -11,11 +12,11 @@ export default async function UsersLayout({
 
   return (
     // @ts-expect-error Server Component
-    <Sidebar>
+    <SideBar>
       <div className="h-full">
         <UserList items={users} />
         {children}
       </div>
-    </Sidebar>
+    </SideBar>
   );
 }

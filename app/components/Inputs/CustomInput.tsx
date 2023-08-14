@@ -6,6 +6,7 @@ import {
   FieldValues, 
   UseFormRegister 
 } from "react-hook-form";
+import React from "react";
 
 interface InputProps {
   label: string;
@@ -17,7 +18,7 @@ interface InputProps {
   disabled?: boolean;
 }
 
-const Input: React.FC<InputProps> = ({
+const CustomInput: React.FC<InputProps> = ({
   label,
   id,
   register,
@@ -74,4 +75,4 @@ const Input: React.FC<InputProps> = ({
    );
 }
  
-export default Input;
+export default CustomInput;

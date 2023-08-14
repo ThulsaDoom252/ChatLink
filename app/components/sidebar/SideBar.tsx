@@ -3,7 +3,7 @@ import getCurrentUser from '@/app/actions/getCurrentUser';
 import DesktopSidebar from './DesktopSidebar';
 import MobileFooter from './MobileFooter';
 
-async function Sidebar({ children }: {
+async function SideBar({ children }: {
   children: React.ReactNode,
 }) {
   const currentUser = await getCurrentUser();
@@ -19,4 +19,4 @@ async function Sidebar({ children }: {
   )
 }
 
-export default Sidebar;
+export default SideBar;

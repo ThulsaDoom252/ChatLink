@@ -7,7 +7,7 @@ import { BsGithub, BsGoogle  } from 'react-icons/bs';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { useRouter } from "next/navigation";
 
-import Input from "@/app/components/inputs/Input";
+import CustomInput from "@/app/components/Inputs/CustomInput";
 import AuthSocialButton from './AuthSocialButton';
 import Button from "@/app/components/Button";
 import { toast } from "react-hot-toast";
@@ -121,7 +121,7 @@ const AuthForm = () => {
           onSubmit={handleSubmit(onSubmit)}
         >
           {variant === 'REGISTER' && (
-            <Input
+            <CustomInput
               disabled={isLoading}
               register={register}
               errors={errors}
@@ -130,7 +130,7 @@ const AuthForm = () => {
               label="Name"
             />
           )}
-          <Input 
+          <CustomInput
             disabled={isLoading}
             register={register}
             errors={errors}
@@ -139,7 +139,7 @@ const AuthForm = () => {
             label="Email address" 
             type="email"
           />
-          <Input 
+          <CustomInput
             disabled={isLoading}
             register={register}
             errors={errors}

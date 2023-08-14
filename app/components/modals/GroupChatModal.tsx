@@ -10,11 +10,12 @@ import {
 } from 'react-hook-form';
 import { User } from '@prisma/client';
 
-import Input from "../inputs/Input";
-import Select from '../inputs/Select';
+
+import Select from '../../components/Inputs/Select';
 import Modal from './Modal';
 import Button from '../Button';
 import { toast } from 'react-hot-toast';
+import CustomInput from "../Inputs/CustomInput";
 
 interface GroupChatModalProps {
   isOpen?: boolean;
@@ -81,7 +82,7 @@ const GroupChatModal: React.FC<GroupChatModalProps> = ({
               Create a chat with more than 2 people.
             </p>
             <div className="mt-10 flex flex-col gap-y-8">
-              <Input
+              <CustomInput
                 disabled={isLoading}
                 label="Name" 
                 id="name" 
