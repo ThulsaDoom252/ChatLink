@@ -3,9 +3,9 @@
 import useActiveChannel from "../hooks/useActiveChannel";
 
 const ActiveStatus = () => {
-    useActiveChannel();
+  useActiveChannel();
 
-    return null;
+  return null;
 }
-
+ 
 export default ActiveStatus;
